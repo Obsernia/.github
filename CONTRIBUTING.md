@@ -1,56 +1,56 @@
-# Contributing to Obsernia Projects
+# Cómo contribuir a los proyectos de Obsernia
 
-Thank you for helping improve Obsernia's open-source observability, IT monitoring, and cybersecurity projects. Contributions of code, documentation, tests, bug reports, operational experience, and design feedback are welcome.
+Gracias por ayudar a mejorar los proyectos de código abierto de Obsernia relacionados con observabilidad, monitorización de sistemas y ciberseguridad. Son bienvenidas las contribuciones de código, documentación, pruebas, informes de errores, experiencia operativa y propuestas de diseño.
 
-This document provides organization-wide defaults. Instructions in an individual repository's documentation take precedence where they differ.
+Este documento establece las normas generales de la organización. Si un repositorio contiene instrucciones propias, estas tendrán prioridad.
 
-## Before You Contribute
+## Antes de contribuir
 
-- Read the repository's `README`, documentation, license, and any project-specific contribution guidance.
-- Search existing issues and pull requests before opening a new one.
-- For a substantial change, open a feature request or discussion first so that scope and design can be agreed before significant work begins.
-- Follow our [Code of Conduct](CODE_OF_CONDUCT.md) in all project spaces.
-- Never include credentials, private keys, access tokens, customer data, internal hostnames, unredacted logs, or other sensitive information in a contribution.
+- Lee el `README`, la documentación, la licencia y las instrucciones específicas del repositorio.
+- Busca en los issues y pull requests existentes antes de crear uno nuevo.
+- Para cambios importantes, abre primero una propuesta o discusión para acordar el alcance y el diseño.
+- Respeta nuestro [Código de conducta](CODE_OF_CONDUCT.md) en todos los espacios del proyecto.
+- No incluyas credenciales, claves privadas, tokens, datos de clientes, nombres internos de equipos, registros sin anonimizar ni otra información sensible.
 
-## Reporting Bugs
+## Informar de errores
 
-Use the repository's bug-report template when one is available. A useful report includes:
+Utiliza la plantilla de informe de errores del repositorio cuando exista. Un buen informe debe incluir:
 
-- A clear, descriptive title.
-- The affected project version, commit, or container image tag.
-- The operating system, runtime, deployment model, and relevant dependencies.
-- Minimal steps to reproduce the problem.
-- The expected and actual behavior.
-- Sanitized logs, traces, metrics, screenshots, or a minimal reproduction, where helpful.
-- Any workaround and an assessment of operational impact.
+- Un título claro y descriptivo.
+- La versión, el commit o la etiqueta de imagen afectada.
+- El sistema operativo, entorno de ejecución, modelo de despliegue y dependencias relevantes.
+- Los pasos mínimos necesarios para reproducir el problema.
+- El comportamiento esperado y el comportamiento observado.
+- Registros, trazas, métricas, capturas o un ejemplo mínimo, siempre debidamente anonimizados.
+- Cualquier solución temporal conocida y una valoración del impacto operativo.
 
-Reduce the report to the smallest reproducible example where practical. Remove secrets and identifying infrastructure or customer data before attaching diagnostic output.
+Reduce el caso al ejemplo reproducible más pequeño posible. Elimina secretos y cualquier dato que identifique infraestructuras, usuarios o clientes.
 
-If the issue could expose data, bypass access controls, compromise a system, or otherwise represent a security vulnerability, **do not open a public issue**. Follow the instructions in [SECURITY.md](SECURITY.md).
+Si el problema pudiera exponer datos, eludir controles de acceso, comprometer un sistema o constituir una vulnerabilidad, **no abras un issue público**. Sigue las instrucciones de [SECURITY.md](SECURITY.md).
 
-## Requesting Features
+## Proponer mejoras
 
-Open a feature request in the most relevant repository and describe:
+Abre una solicitud de funcionalidad en el repositorio correspondiente e indica:
 
-- The problem or operational need, not only the proposed implementation.
-- The users and environments affected.
-- The desired outcome and possible alternatives.
-- Compatibility, performance, privacy, security, and migration considerations.
-- Examples of relevant telemetry, workflows, or integrations, with sensitive data removed.
+- El problema o necesidad operativa que quieres resolver.
+- Los usuarios y entornos afectados.
+- El resultado deseado y las alternativas consideradas.
+- Las implicaciones de compatibilidad, rendimiento, privacidad, seguridad y migración.
+- Ejemplos de telemetría, flujos de trabajo o integraciones, sin datos sensibles.
 
-Maintainers may ask for clarification, suggest a smaller scope, or decline proposals that do not fit the project's direction or maintenance capacity.
+Los mantenedores podrán pedir aclaraciones, proponer un alcance menor o rechazar propuestas que no encajen con la dirección o la capacidad de mantenimiento del proyecto.
 
-## Preparing a Change
+## Preparar un cambio
 
-1. Fork the repository unless you have permission to create branches directly.
-2. Create a branch from the repository's current default branch.
-3. Make one focused change, including tests and documentation where appropriate.
-4. Run the repository's documented formatting, linting, test, build, and security checks.
-5. Open a pull request against the default branch unless the repository states otherwise.
+1. Haz un fork del repositorio, salvo que tengas permiso para crear ramas directamente.
+2. Crea una rama a partir de la rama predeterminada actual.
+3. Realiza un cambio concreto e incluye las pruebas y la documentación necesarias.
+4. Ejecuta las comprobaciones de formato, análisis, pruebas, compilación y seguridad indicadas por el repositorio.
+5. Abre un pull request contra la rama predeterminada, salvo que el proyecto indique otra cosa.
 
-### Branches
+### Ramas
 
-Follow repository-specific naming rules when present. Otherwise, use a short, descriptive name with a category prefix, for example:
+Respeta las reglas del repositorio cuando existan. En caso contrario, utiliza un nombre breve y descriptivo con un prefijo de categoría, por ejemplo:
 
 - `feat/add-prometheus-exporter`
 - `fix/alert-deduplication`
@@ -58,52 +58,52 @@ Follow repository-specific naming rules when present. Otherwise, use a short, de
 - `test/parser-edge-cases`
 - `chore/update-dependencies`
 
-Do not publish exploit code or vulnerability details on a normal branch or public fork. Security fixes should be coordinated through the private process described in [SECURITY.md](SECURITY.md).
+No publiques exploits ni detalles de vulnerabilidades en ramas normales o forks públicos. Coordina las correcciones de seguridad mediante el proceso privado descrito en [SECURITY.md](SECURITY.md).
 
 ### Commits
 
-- Keep commits small, coherent, and reviewable.
-- Write an imperative, descriptive subject line, such as `Fix timeout handling in probe scheduler`.
-- Explain the reason for non-obvious changes in the commit body.
-- Reference the relevant issue when appropriate.
-- Avoid mixing formatting, refactoring, generated files, and behavioral changes without a clear need.
-- Preserve meaningful attribution and comply with the licenses of all third-party material.
+- Mantén los commits pequeños, coherentes y fáciles de revisar.
+- Utiliza un asunto descriptivo en imperativo, por ejemplo: `Corrige la gestión de timeouts del planificador`.
+- Explica en el cuerpo el motivo de los cambios que no resulten evidentes.
+- Haz referencia al issue correspondiente cuando proceda.
+- Evita mezclar cambios de formato, refactorizaciones, archivos generados y cambios funcionales sin una razón clara.
+- Conserva las atribuciones necesarias y respeta las licencias de todo material de terceros.
 
-Use Conventional Commits only when the repository requires or already follows that convention. Before requesting review, clean up temporary or accidental commits while preserving useful review history.
+Utiliza Conventional Commits únicamente si el repositorio lo exige o ya sigue esa convención. Antes de solicitar una revisión, elimina los commits temporales o accidentales sin perder información útil para la revisión.
 
-### Tests and Quality
+### Pruebas y calidad
 
-Add or update tests for changed behavior. Depending on the project, this may include unit, integration, end-to-end, regression, compatibility, performance, or security tests.
+Añade o actualiza pruebas para cualquier comportamiento modificado. Según el proyecto, pueden ser pruebas unitarias, de integración, extremo a extremo, de regresión, compatibilidad, rendimiento o seguridad.
 
-Tests should be deterministic, isolated, and safe to run. They must not depend on production credentials, customer systems, or destructive actions. Use synthetic and sanitized fixtures. For monitoring and observability changes, consider failure modes, partial data, high-cardinality inputs, timeouts, retries, clock differences, and degraded dependencies.
+Las pruebas deben ser deterministas, estar aisladas y ser seguras. No deben depender de credenciales de producción, sistemas de clientes ni acciones destructivas. Utiliza datos sintéticos y anonimizados. En los cambios de monitorización y observabilidad, ten en cuenta fallos parciales, ausencia de datos, entradas de alta cardinalidad, timeouts, reintentos, diferencias de reloj y dependencias degradadas.
 
-If a relevant test cannot be added or run, explain why in the pull request and describe the validation performed instead.
+Si no puedes añadir o ejecutar una prueba relevante, explica el motivo en el pull request e indica cómo has validado el cambio.
 
-## Pull Requests
+## Pull requests
 
-A pull request should:
+Un pull request debe:
 
-- Have a concise title and explain what changed and why.
-- Be limited to a reviewable scope.
-- Link related issues using GitHub keywords where appropriate.
-- Describe testing performed and the environments used.
-- Identify compatibility, deployment, configuration, migration, performance, privacy, and security effects.
-- Update user-facing documentation, examples, schemas, and release notes when required.
-- Include sanitized screenshots or sample output for visible changes.
-- Pass all required automated checks.
+- Tener un título claro y explicar qué cambia y por qué.
+- Limitarse a un alcance razonable para su revisión.
+- Enlazar los issues relacionados cuando corresponda.
+- Describir las pruebas realizadas y los entornos utilizados.
+- Identificar efectos sobre compatibilidad, despliegue, configuración, migración, rendimiento, privacidad y seguridad.
+- Actualizar la documentación, ejemplos, esquemas y notas de versión cuando sea necesario.
+- Incluir capturas o resultados anonimizados si hay cambios visibles.
+- Superar todas las comprobaciones automáticas obligatorias.
 
-Mark unfinished work as a draft. Respond constructively to review, and resolve conversations only when the concern has been addressed or agreement has been reached. Maintainers may edit, squash, rebase, or close a pull request to keep project history and scope manageable.
+Marca como borrador el trabajo que todavía no esté listo. Responde de forma constructiva a las revisiones y resuelve las conversaciones únicamente cuando el asunto se haya corregido o exista un acuerdo. Los mantenedores podrán reorganizar o cerrar una contribución para preservar la calidad y el alcance del proyecto.
 
-By submitting a contribution, you affirm that you have the right to provide it and that it may be distributed under the repository's license. Do not submit copied code or assets without compatible licensing and required attribution.
+Al enviar una contribución, confirmas que tienes derecho a aportarla y que podrá distribuirse bajo la licencia del repositorio. No envíes código o recursos copiados sin una licencia compatible y las atribuciones necesarias.
 
-## Security-Sensitive Contributions
+## Contribuciones relacionadas con la seguridad
 
-Treat anything involving authentication, authorization, cryptography, secret handling, network boundaries, parsers, agents, collectors, privileged execution, or telemetry containing personal or infrastructure data as security-sensitive.
+Considera especialmente sensibles los cambios que afecten a autenticación, autorización, criptografía, secretos, límites de red, analizadores, agentes, recolectores, ejecución privilegiada o telemetría con datos personales o de infraestructura.
 
-Do not disclose suspected vulnerabilities in issues, discussions, pull requests, public forks, commit messages, or chat channels. Use the private reporting process in [SECURITY.md](SECURITY.md). Maintainers will coordinate validation, remediation, and disclosure with the reporter.
+No reveles posibles vulnerabilidades en issues, discusiones, pull requests, forks públicos, mensajes de commit ni canales de chat. Utiliza el proceso privado definido en [SECURITY.md](SECURITY.md). Los mantenedores coordinarán con la persona informante la validación, corrección y divulgación.
 
-## Review and Acceptance
+## Revisión y aceptación
 
-Submitting a contribution does not guarantee acceptance. Maintainers consider correctness, security, maintainability, compatibility, project direction, and long-term support cost. They may request changes or close inactive contributions. Respectful disagreement is welcome; final decisions rest with the maintainers of the affected repository.
+Enviar una contribución no garantiza que sea aceptada. Los mantenedores valorarán su corrección, seguridad, facilidad de mantenimiento, compatibilidad, alineación con el proyecto y coste de soporte a largo plazo. Podrán solicitar cambios o cerrar contribuciones inactivas. El desacuerdo respetuoso es bienvenido; la decisión final corresponde a los mantenedores del repositorio afectado.
 
-Thank you for contributing to safer and more dependable systems.
+Gracias por contribuir a crear sistemas más seguros y fiables.
